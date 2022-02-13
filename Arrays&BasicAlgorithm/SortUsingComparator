@@ -1,0 +1,48 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+
+class TwoDArrayComparator implements Comparator<int[]> {
+   public int compare(int[] arr1, int[] arr2) {
+	   
+	  // return arr1.compareTo(arr2);
+	   
+	   if(arr1[0] < arr2[0]) {
+	   return -1;
+	   }
+	   if(arr1[0] > arr2[0]){
+	   return 1;
+	   }else{
+	   return 0;
+	   }
+   }
+}
+
+// class TwoDArrayComparator implements Comparator<int[]> {
+//    public int compare(int[] arr1, int[] arr2) {
+//        if(arr1[0] > arr2[0]) {
+//            return 1;
+//        } 
+// 	   if(arr1[0] < arr2[0]){
+// 		   return -1;
+// 	   }else{
+// 		   return 0;
+// 	   }
+//    }
+// }
+
+
+
+class WorkAtTech{
+	public static void main (String[] args) throws java.lang.Exception{
+		
+		int[][] arr = {{1,2}, {4,3}, {3,4}, {2,6}};
+		Arrays.sort(arr, new TwoDArrayComparator());
+		    for(int i = 0; i < 4; i++)
+            for(int j = 0; j < 2; j++)
+             System.out.println("arr[" + i + "][" + j + "] = " + arr[i][j]);
+		
+	}
+}

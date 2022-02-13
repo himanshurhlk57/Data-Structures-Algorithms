@@ -1,0 +1,45 @@
+SID   Name   Marks   Department   Course   -> Attributes/Fields
+ 1    A      78        CSE         C1
+ 2    B      60        EE          C1
+ 3    A      78        CSE         C2
+ 4    B      60        EE          C3
+ 5    C      80        IT          C2
+ 
+ Why we need Keys -> For identifying any row of data in a table uniquely
+ Key -> Attribute or set of attributes that can uniquely identify each row in a table;
+
+In upper table using SID can uniquely identify each row in this table;
+Here SID is key.
+{Department, Course} -> {CSE, C1} -> Key -> This set of attribute an identify each row uniquely;
+{Name, Marks} -> {A, 78} -> Not a Key;
+{Name, Marks, Department, Course} -> Key -> Combination of attribute can identify each row uniquely in the table;
+
+1-> Super Key -> Attribute or set of attributes that helps to uniquely identify the each row of data in a table.({SID},{Department, Course});
+
+Maximum super key in a table -> 2^n-1; n->(No.of attributes)
+
+Table -> A  B  C
+         1  1  1
+	     2  1  2
+	     3  2  1
+	     4  2  2
+2-> Candidate Key -> In super key there can be repetitive attributes but the candidate key is a super key with no repetitive attributes;
+In upper table Super key -> (A, AB, AC, ABC, BC) (SID, REG_ID, EMAIL)
+	
+3->Primary->  The candidate key chosen to unqiuely identify each row of data in a table is knowns as primary key. Primary key value cannot be NULL.
+We have three Candidate Key(SID, REG_ID, EMAIL) make anyone from these three a primary key must be meaningful.
+Primary Key (REG_ID)
+	
+4-> Alternate Key -> All the remaining candidate key which are not selected as a primary key are called Alternate Keys.
+	
+5-> Foreign key -> Attribute in a table which is used to create a relationship of that table with some other table incase a table has relationship using foreign key helps us to maintain data integrity for the relationship.
+	
+6-> Composite Key -> All the super key with more than one attributes are also called composite key.
+
+7-> Unique key -> Same as primary key except that primary key don't allow NULL values in the column but unqiue key allows them.
+	
+	
+	
+	
+	
+	

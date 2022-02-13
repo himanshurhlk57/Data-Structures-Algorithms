@@ -1,0 +1,160 @@
+DDL Command -> Data Definition Language :-> It contains commands which are required to define the database.
+	
+ex:-> CREATE, RENAME, TRUNCATE, DROP, ALTER
+
+1- *CREATE* -> use to create database, or table
+First create database and in that create different table
+
+i-> create database
+syntax ->
+create database university;
+show databases;
+
+select databases
+ii-> use university;
+
+iii-> create table with its column name(column_name, data_type)
+create table Student(id int, name varchar(100), age int);
+
+iv-> show tables;  (shows all the table created in university databases);
+
+iv-> describe Student;
+
+Insert value in tables;
+
+iv-> insert into Student values(101, "abc", 20);
+
+v-> select * from Student;
+[id  name  age]
+[101  abc  20 ]
+
+insert values in table with our according
+vi-> insert into Student(id, name) values(102, "def");
+
+
+2- *RENAME*
+used to rename our table;
+
+rename our existing Student table
+i-> rename table Student to Std;
+
+change two or more different table name using commas
+ii-> rename table Faculty to fac, Faculty_New to fac_new;
+
+
+3- *TRUNCATE* 
+Empties entier table, delete all the data of Student table only want its structure
+
+i-> truncate Student;
+table structure wil remains also the constrained apply in any
+
+
+4- *DROP*
+truncate delete only data, structure remains there whereas drop destroys entier table/databases as well as its structure.
+
+i-> drop table Student;
+
+ii-> drop database University;
+
+
+5- *ALTER*
+to change something or modify existing table, can also add one column into our table;
+
+Lets add one more column address
+i-> alter table Student add(address varchar(100));
+now fourth column has been added
+
+Add multipe column in our table;
+ii->  alter table Student add(ContactNumber int, EmailId varchar(100));
+Two more column has been added
+
+Add column with default values
+iii->  alter table Student add(test int default '100');
+
+modify datatype of existing attributes
+iv->  alter table Student modify column ContactNumber varchar(100);
+now ContactNumber is of type varchar type
+
+rename our existing column
+v->  alter table Student change address Location varchar(200);
+Address column name has been changed to Location
+
+delete particular column
+vi-> alter table Student drop test;
+test has been dropped
+
+
+
+
+
+DML(Data Manipulation Language)-> It contains commands which are required to manipulate the data present in the database.
+Example-> SELECT, INSERT, UPDATE, DELETE
+
+1- SELECT
+use to retrive data from database
+
+print specific column
+i- select age from Student;
+
+print two column at a time
+ii- select name, age from Student;
+
+print everyColumn present in the table
+iii- select * from Student;
+
+
+2- INSERT 
+used to insert data into a table
+i- insert into Student values(101, "Neha", 20);
+
+insert values to only specific field/column
+ii- insert into Student(name, age, id) values("Nisha", 21, 102);
+
+3-UPDATE
+use to update a row of the table
+i- update Student set age = 100;
+
+
+4- DELETE
+Delete command is used to delete data from a table
+delete command when if we only want to delete some rows(if specified condition if we dont specify condition then entier row will be deleted)
+Truncate command when we want to delete entier row
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

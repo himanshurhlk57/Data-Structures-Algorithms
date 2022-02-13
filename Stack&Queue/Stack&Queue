@@ -1,0 +1,63 @@
+Stack is an abstract data type used to store a list of elements and 
+operates on the principle of LIFO (Last-In, First-Out), i.e., last element inserted is the first one to be removed.
+
+The major operations in a stack are:
+
+push: Add an element to the top of the stack
+pop: Remove the topmost element of the stack
+size: Get the current number of elements in the stack
+isEmpty: Check whether the stack is empty or not
+top: Get the topmost element of the stack without popping it
+
+
+Implementing stack using array means the memory or the structure we 
+will be using to store the data into the stack will be an array
+Stack will control how are you going to access entries to the array
+The acces to the array will only be in LIFO fashion
+
+Applications of stack
+Undo sequence in a text editor
+Evaluating postfix expression
+Page visited history in the browser - using back button
+Matching tags in HTML/XML
+
+Queue
+
+Queue is an abstract data type used to store a list of elements and operates on the principle of FIFO (First-In, First-Out), i.e., first element inserted is the first one to be removed.
+
+
+Deque
+A variation of the queue is a double-ended queue (deque) where elements can be enqueued or dequeued from both sizes.
+
+A deque allows enqueue and dequeue operations at both ends.
+
+Since deque allows pushing and popping from both ends, they can be used independently as both stacks and queues. In fact, the recommended way to create a stack or a queue in Java is using a Deque.
+
+
+
+
+ava has an interface named Deque which is used to create a Double-ended queue. The Deque interface extends the Queue interface.
+
+Most used implementations of Deque interface:
+
+LinkedList
+ArrayDeque
+The Deque interface is generally implemented with the ArrayDeque class to create stack, queue, and deque objects. Note that a LinkedList can also be used for the same. ArrayDeque performs better and so is the recommended way to create stack, queue, and deque objects.
+
+
+
+Recommended Way
+We can use the native stack methods as well on a Deque like this:
+
+Deque<Integer> stack = new ArrayDeque<Integer>();
+
+stack.push(42); //Push to stack
+stack.pop(); //Pop stack
+stack.peek(); //Get top element of stack
+We can use the native queue methods as well on a Deque like this:
+
+Deque<Integer> queue = new ArrayDeque<Integer>();
+
+queue.offer(42); //Enqueue
+queue.poll(); //Dequeue
+queue.peek(); //Get front element of queue

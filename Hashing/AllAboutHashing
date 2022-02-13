@@ -1,0 +1,35 @@
+Hashing is a technique or process of mapping keys, values, into the hash tabe 
+by using a hash function. It is dine for faster access to elements
+.The efficiency of mapping depends on the efficiency of the hash function used.
+
+Any data structure which is using the hashing technique to store information 
+effectively and for effective retrieval also in same way you can call it is a hashmap.
+
+
+
+If "abc", 2 has come abc will pass to the hashfunction. let say it gives you the integer 92. Your bucket size is 20.
+Compresssion function will give you 92 % 20 -> 12. You will go to the index 12 and store "abc", 2
+
+
+
+// Internal hashmap is implemented through hashtable
+// For hashmap we want insertion and retrieval of data very very fast and the data structure we already know where access or insertion is already faster is array. If we know the position we can directly go the position in O(1) time.
+// Key is passed through a hashfunction which gives you an integer
+
+Key -> [Hash Function] -> Integer
+Bucket Array -> [           ]
+
+Key("abc") -> [Hash Function] -> Integer 10528
+if my bucket array size is 10529 i can store the value of key "abc";
+if my bucket array size is 20 i can't store it at 10528 index.
+	
+1-> Get the hashcode(for any key we get an integer)
+2-> Compression(will give me the index within my array size if my bucket array is of size 20 the index i will get will be in the range 0-19)
+
+if my bucket array size is n(20) and then i take (Hashcode % bucketSize) -> range will be 0 to n-1
+	
+Every class whether String class, or Student class present in java which is inherited from the superclass which is object and object has an hashcode function which gives you hashcode for that.
+And this hashcode is computed according to the address.
+	
+Every class in java have their own hashcode function from their superclass of object class. 
+Their is hashcode function in object class, there is hashcode function in your classes if you want to hashcode in your own class you can make a hashcode function and override the hashcode function present in object class.

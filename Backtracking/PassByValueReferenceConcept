@@ -1,0 +1,66 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class WorkAtTech{
+	
+	static List<List<Integer>> result = new ArrayList<>();
+	
+	static void add(List<Integer> nums, int num){
+		nums.add(num);
+		result.add(nums);
+	}
+	    
+	/******** if you wrote the entier backtracking soluting and seeing the empty array rememeber that you haven't create the clone of the array */
+	   	static List<List<Integer>> result1 = new ArrayList<>();
+	
+		static void add1(List<Integer> nums1, int num1){
+		nums1.add(num1);
+		result1.add(new ArrayList(nums1));
+//Create a clone of nums1 and pass it to result1
+//so that both the nums1 shouldn't point to the same memory address
+	}
+	
+	static void increment(int num){
+	     num = num + 1;
+	}
+	
+	static int incrementNums(int num){
+		num = num + 1;
+		return num;
+	}
+	
+	public static void main (String[] args) throws java.lang.Exception{
+		
+	    int num = 5;
+		increment(num);
+		// System.out.println(num); 
+// output 5 because the copy of 5 has been passed to increment function and in the increment function nums value has been incremented from 5 to 6 in the main function num value has been remians same;
+		
+		
+		// num = incrementNums(num);
+		// System.out.println(num); 
+        // Output 6
+		
+		List<Integer> nums = new ArrayList<>();
+		add(nums, num);
+		// System.out.println(nums);
+// As we called add function reference of nums has been passed to the add function and in both the main function and add function nums is pointing to the same memory address so if we are changing here adding element in nums array it will reflect in the main nums also so if we print nums will contains 5.
+		num = 6;
+		add(nums, num);
+		System.out.println(result); 
+		// [[5, 6], [5, 6]]
+		
+		
+		//Correct way
+		int num1 = 5;
+		List<Integer> nums1 = new ArrayList<>();
+		add1(nums1, num1);
+		num1 = 6;
+		add1(nums1, num1);
+		System.out.println(result1); 
+		// [[5], [5, 6]] 
+		
+	} 
+}

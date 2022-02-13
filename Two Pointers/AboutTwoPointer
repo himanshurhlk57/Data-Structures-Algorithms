@@ -1,0 +1,55 @@
+// Both pointers starting from the beginning and moving in the same direction
+// Both pointers moving in the same direction at a fixed difference of k (Sliding Window)
+// Both pointers starting from opposite ends and moving towards each other
+// Two or more pointers each on a separate array
+
+// In most of the problems involving multiple sorted arrays, two or more pointers would be required unless another data structure helps create a more efficient algorithm.
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+// Reversing an array using extra space making changes in the same array so in last we have to copy all the elements from the reverse to arr.
+// S.C -> O(n)
+
+
+class WorkAtTech{
+	
+	public static void reverseArray(int[] arr){
+		int[] reverse = new int[arr.length];
+	    int j = 0;
+		for(int i = arr.length-1; i>=0; i--){
+			reverse[j] = arr[i];
+			j++;
+		}
+        for(int i = 0; i<reverse.length; i++){
+			arr[i] = reverse[i];
+		}
+	}
+	
+// Lets reverse the array without using any extra space using two pointer approach.
+ public static void reverseUsingTwoPointer(int[] arr){
+	 int i = 0;
+	 int j = arr.length-1;
+	 while(i<j){
+		 int temp = arr[i];
+		 arr[i] = arr[j];
+		 arr[j] = temp;
+		 i++;
+		 j--;
+	 }
+ }
+	
+	public static void main (String[] args) throws java.lang.Exception{
+		int[] arr = {1,2,3,4,5};
+		// int[] result = reverseArray(arr);
+		// reverseArray(arr);
+		reverseUsingTwoPointer(arr);
+		for(int i = 0; i<arr.length; i++){
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+	}
+}

@@ -1,0 +1,70 @@
+Acoording to the priority you are allocating some things whether
+age, vip status, criticality, gendre etc.
+
+Queue(FIFO) -> Insert at the front, exit or delete from the front
+
+Priority Queue -> Inserting element like a queue but allocating them
+or removing them from queue depend on some factor which is known as
+priority.
+
+P1 P2 P3 P4 P5
+30 20 10 40 50
+Depend on what priority you want your element to come out first
+if lowest priority then p3 will come out first if highest then
+p5
+
+Two type of priority queue ->
+ Max- Priority Queue
+ Min- Priority Queue
+
+ Three important function in priority queue ->
+ 1 -> insert
+ 2 -> get max(getting element with maximum priority)
+ 3 -> get min(getting element with minimum priority)
+ 4 -> remove max
+ 5 -> remove min
+
+Different way to implement the priority queue
+
+ 1-> Minimum priority queue ->
+                   Insert      Get min        Remove min
+ Array(Unsorted)     O(1)         O(n)          O(n)
+ Sorted array        O(n)          O(1)          O(n)
+ Unsorted LL         O(n)          O(n)          O(n)
+ Bst                 O(h)          O(h)          O(h)
+ Balanced Bst        O(logn)       O(logn)        O(logn)
+ HahsMap             O(1)          O(n)           O(n)
+
+ Best Data structure to implement priority queue till now we 
+ found is Balanced Bst
+ (isssue 1- balancing factor(lh-rh<=1))
+ storage issue quite complicated
+
+ *Heap Data Structure*
+
+ -> Complete Binary Tree(All levels should be completely filled except the last level and the last level should be as last as can)
+ Before completely filling the current level you canot fill/add element in the next level.
+ After filling the current level fully you can fill in the next level
+ Element should be filled in each level from left to right
+
+                   1
+                2     3
+            4     5  
+            If i need to remove element 5 will be removed
+            if i need to add element then new element will be added to 3 left
+
+In Complete binary tree my height will be O(logn)
+Storing in Complete binary tree is easy
+
+Lets implement Complete binary tree using array.
+           10
+        2       3
+    7     8  9     12
+13
+
+Array -> 10 2 3 7 8 9 12 13
+1-> to insert simply insert at last positon of the array(O(1)))
+2-> 
+
+
+ -> Heap order property

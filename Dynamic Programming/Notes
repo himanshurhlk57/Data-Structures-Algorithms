@@ -1,0 +1,55 @@
+Dynamic Programming ->  Dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems,
+
+solving each of these subproblem just once and storing their solutions using a memory-based datastructure(array, map).
+will apply on problem which has
+
+1-> Optimal substructure(My problem can be solved if i know the answer of smaller subproblem)
+2-> Overlapping subproblems
+
+
+How to solve a problem using DP?
+There are 4 steps involved in solving a problem using DP:
+
+Identify if the problem can be solved using DP
+Come up with the state expression with the least parameters
+Create a state relationship
+Use memoization or tabulation
+
+
+The nth Fibonacci number is the sum of the previous two Fibonacci numbers.
+
+F(n) = F(n-1) + F(n-2)
+A brute-force recursive solution for nth fibonacci would look like this:
+
+int fibonacci(int n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+For 5th fibonacci 
+                      5
+                4           3
+            3      2     2     1
+        2     1  1  0  1   0   
+     1    0
+
+Overlapping subproblems arises above because you are calculation same fibonacci number so many times
+Repetitive calls due to which T.C becomes -> 2^n(Because you are calculating same subproblem again and again)
+
+ Dynamic programming uses this fact to solve a subproblem only once by storing the result 
+ and reusing it later making the solution effective.
+
+ Now all of your calls are unique and if that happens your complexity 
+ becomes O(n)
+
+                5
+              4
+            3
+          2
+        1   0
+
+3rd will not call for 1 beacuse you have already the answer of 1
+same as 4 will not call for 2 because you have answer for 2 here
+So now all the calls are unique here. Every calls take constant time so our time compexity becomes
+T.C = no of unique calls(n) * O(1) i.e O(n)
+Exponential to linear time complexity due to dynamic programming

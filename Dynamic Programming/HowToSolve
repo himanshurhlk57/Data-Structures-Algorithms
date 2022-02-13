@@ -1,0 +1,158 @@
+Dynamic Programming can be used to optimally solve a problem if it has these two properties:
+
+Optimal Substructure
+Overlapping Subproblems
+
+// 1-> State expression with least parameters()
+// 2-> Create a state relationship
+// 3-> use memoization or tabulation
+// Whatever is the result set it the state expression(Use the state relationship to set the dp value before returning)
+// Return the state expression 
+
+least parameters mean that we should only include those parameters which can uniquely identify a state.
+
+Example :- LOngest COnsecutive Sequence
+
+1-> Recursive Code(Time Complexity: O(2n))
+
+
+class Solution {
+	
+	static int getLengthOfLCSUtil(String s1, String s2, int n, int m){
+		
+		if(n == 0 || m == 0){
+			return 0;
+		}
+		
+		if(s1.charAt(n-1) == s2.charAt(m-1)){
+			return 1 + getLengthOfLCSUtil(s1, s2, n-1, m-1);
+		}else{
+			return Math.max(getLengthOfLCSUtil(s1, s2, n-1, m), getLengthOfLCSUtil(s1, s2, n, m-1)); 
+		}
+	}
+	
+	int getLengthOfLCS(String s1, String s2) {
+	return getLengthOfLCSUtil(s1, s2, s1.length(), s2.length());
+	}
+}
+
+
+2-> Memoization(O(n*m))
+Note that we only need to consider the parameters that are changing across recursive calls.
+the state parameters are n and m
+
+class Solution {
+	
+	//Check if dp[n][m] already contains answer
+	//State expression -> dp[n][m] n and m are changing throughout
+	//State relationship -> dp[n][m] = result;
+	// return state expression -> dp[n][m];
+
+	
+	static int getLengthOfLCSUtil(String s1, String s2, int n, int m, int[][] dp){
+		
+		if(dp[n][m]!=-1){
+			return dp[n][m];
+		}
+		
+		if(n == 0 || m == 0){
+			return 0;
+		}
+		
+		if(s1.charAt(n-1) == s2.charAt(m-1)){
+			dp[n][m] = 1 + getLengthOfLCSUtil(s1, s2, n-1, m-1, dp);
+		}else{
+			dp[n][m] = Math.max(getLengthOfLCSUtil(s1, s2, n-1, m, dp), getLengthOfLCSUtil(s1, s2, n, m-1, dp)); 
+		}
+		return dp[n][m];
+	}
+	
+	int getLengthOfLCS(String s1, String s2) {
+		int n = s1.length();
+		int m = s2.length();
+		int[][] dp = new int[n+1][m+1];
+		for(int i = 0; i<=n; i++){
+			Arrays.fill(dp[i], -1);
+		}
+	return getLengthOfLCSUtil(s1, s2, s1.length(), s2.length(), dp);
+	}
+}
+
+
+3-> Tabulation(O(n*m))
+
+i-> state expression with least parameters 
+ii ->state relationship as
+iii -> First, start by creating a dp array with dimensions based on the state expression
+iv -> The size of the dp array would depend on the maximum values of all the parameters in the state expression.
+iv -> Add final return statement
+vi -> At the end of the function, return the element from dp with the parameters as the indexes of the dp array.
+vii -> Build the dp array with the results before the final return statement.
+viii -> replace all recursive calls to use dp state
+ix -> Replace return statements with assignment to dp state.
+
+* Construction
+*Tabulation
+*Return
+
+class Solution {
+	
+// s1: "workattech"
+// s2: "branch"
+// Result: 4
+// Explanation: Longest common subsequence is "rach"
+	
+	public static int getLengthOfLCSUtil(String s1, String s2, int n, int m){
+		
+		// Construction
+		int[][] dp = new int[n+1][m+1];
+		
+		//Tabulation
+		for(int i = 0; i<=n; i++){
+		 for(int j = 0; j<=m; j++){
+		if(i == 0 || j == 0){
+			dp[i][j] = 0;
+		}
+		else if(s1.charAt(i-1) == s2.charAt(j-1)){
+			dp[i][j] = 1 + dp[i-1][j-1];
+		}else{
+			dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+		   }
+		  }
+		}
+		
+		//Return
+		return dp[n][m];
+		
+	}
+	
+	int getLengthOfLCS(String s1, String s2) {
+		int n = s1.length();
+		int m = s2.length();
+         int result = getLengthOfLCSUtil(s1, s2, n, m);
+		return result;
+	}
+}
+
+
+//Tabulation Aditya Verma
+Create a matrix of size n+1 and m+1 
+if we create matrix of dp[n][m] then will only able to store 0 - n - 1 element
+
+After creating the dp array first fill the recursion base case into 2d matrix
+if the recursion base case is 
+if(n == 0 || m == 0){                if(i == 0 || j == 0){
+	   return 0          i.e means       dp[i][j] == 0
+}                                     }
+
+
+First we need to start filling the 2d matrix using nested for loop based on the paramterise
+variable 
+so will start iterating over the 2d array and if encountered the base condition the fill that value
+and if i goes in the else condition then will that value in the 2d matrix 
+lastly my answer will be stored in the either last cell or first row last cell
+based on the condition the answer will be stored in that cell
+
+for the  0- 1 knapscak question my answer will be stored in dp[n][m] cell the
+maximum value will be stored if i consider all the elemenet and and all the value
+so will return that cell value

@@ -1,0 +1,16 @@
+A tree is a non-linear data structure unlike an array, linked list, stack, and, queue.
+
+A tree data structure can be defined recursively as a collection of nodes (starting at a root node),
+ where each node is a data structure consisting of a value, together with a list of references to nodes (the "children").
+
+ A binary tree is a tree with a constraint where each node can have at most 2 children. The children are denoted as the left child and right child.
+
+class TreeNode {
+	public int data;
+	public TreeNode left;
+	public TreeNode right;
+	
+	public TreeNode(int data) {
+		this.data = data;
+	}
+}

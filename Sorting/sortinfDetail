@@ -1,0 +1,30 @@
+Sorting Algorithms
+Given a sequence of elements, sorting them means that ordering them in a particular fashion. In general, when we talk about sorting, we are talking about ordering them in ascending order.
+
+Example
+Initial Sequence: 3, 4, 1, 6, 2, 5
+
+After Sorting: 1, 2, 3, 4, 5, 6
+
+The values might be integers, or strings, or even other kinds of objects.
+
+The most popular sorting algorithms are:
+
+Bubble Sort
+Selection Sort
+Insertion Sort
+Quick Sort
+Merge Sort
+
+
+Algorithm      Best Case  Average Case   Worst Case
+
+Bubble Sort    O(n)       O(n2)          O(n2)
+
+Selection Sort O(n2)      O(n2)          O(n2)
+
+Insertion Sort  O(n)      O(n2)          O(n2)
+
+Merge Sort   O(n log(n)) O(n log(n))     O(n log(n))
+
+Quick Sort   O(n log(n)) O(n log(n))      O(n2)

@@ -1,0 +1,35 @@
+A graph is a data structure containing multiple vertices or nodes 
+with a set of pairs of nodes denoting the edges between those nodes
+
+Directed        Acyclic     Graph - Tree
+Directed edges  No Cycle 
+
+Tree is a graph with special condition.
+So if you have a tree you can't have cycle in a tree. In a normal graph
+you can have a cycle. You can start from A and come to A in graph. 
+
+Every tree is a graph but not every graph is a tree.
+Tree has constraints that there shouldn't be cycle, Also in tree there can't
+be any vertices which is disconnected from all of the vertices.  
+
+
+Adjacency List ->
+
+-> Will create an array of all the vertex/node present
+in the graph
+-> Store ArrayList of all the vertex/node connected to it at the 
+ vertex/node index
+
+ Time Complexity of finding if a node is connected to another
+ Will first go to the index at which the node is stored in the array
+ in the worst case it can happen that node is connected to all
+ the other node present in the graph so need to traverse O(n) Time
+ for finding the node in the array will take O(1) Time
+ to find the node it is connected is O(n) time.
+ Overall T.C = O(n);
+
+ Adjaceny Matrix -> If you want to see of there's a edge between two
+ vertices/node you can do it in O(1) time in adjaceny matrix. You just
+ need to go at that index and if ther's 1 present then there's a edge
+ if there's a 0 then there is not edge between that node.
+ T.C -> O(1);

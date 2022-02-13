@@ -1,0 +1,5 @@
+A sliding window technique is generally used for broadly two types of problems:
+
+Finding something in every window of a fixed size (Fixed-Size Sliding Window)
+Finding windows that satisfy a given condition (Variable-Size Sliding Window)
+We will mostly be dealing with fixed-size sliding windows here. Most variable-size sliding window problems can be more efficiently solved using other data structures.
