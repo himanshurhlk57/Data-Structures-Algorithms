@@ -1,0 +1,93 @@
+Object-oriented programming (OOP) is a programming paradigm based on the concept of objects. In OOP, computer programs are designed out of multiple objects that interact with one another.
+
+What we have learned in previous courses is known as procedural programming as it was based on writing procedures (functions/methods) to access or operate on data. The primary focus of procedural languages is functions.
+
+In OOP, data and the functions that operate on them are bound together in classes. The primary focus of OOP languages is data (objects).
+
+Java is one of the most popular object-oriented programming languages.
+
+In OOP, objects and classes are the basic entities. Objects are created using classes. One can observe that classes contain data member,
+and method/function. Objects are created to manipulate and accesss this data.
+
+1 -> // class
+Similar to how int, float, char, etc are in-built data types used to represent different types of data, a class is a user-defined data type used to represent some type of data.
+
+class Phone{
+  public String brand;         // attributes or data member of Phone class
+  public String model;         // blueprint for the objects we are going to create from the phone class
+}
+
+we have made the blueprint or the properties that is going to have in the objects that are going to be created by the phone class.
+So what happens is when we create any object of this phone class. A constructor automatically gets invoked to assign the values to these attributes. In this case Phone class has only attributes not function/method. 
+
+If in the case we haven't make any constructor a default constructor gets invoked and assign default values of that data-types to these attributes.
+
+In case if we created a constructor to assign values to these attributes default constructor will automatically omitted.
+
+Now lets create a object of the Phone class
+
+class Phone{
+  public String brand;
+  public String model;
+
+   Phone (String brandVal, String model){
+    brand = brandVal;
+    model = modelVal;
+   }
+}
+
+class WorkAtTech{
+  public static void main(String[] args){
+    Phone my-iphone = new Phone("Apple", "111");    // to assign the values to the class attribute constructor comes up. We passed Apple, 11
+  }
+}
+
+the constructor receives this value and assign respective values to the attributes.
+why the constructor and class name is same is that we have created the object of Phone class
+and want to assign the values to the Phone class attributes.
+Constructor can have access modifier but not return type.
+
+// Static attribute and method/function
+
+if we mention any method/function as static we don't need to create an object of that class in which this static method is present to access it.
+
+class WorkAtTech{
+  public static void main(String[] args){
+    // main method is static so that we can access main method without creating the object of WorkAtTech class.
+    function and attributes can be static.
+    static denotes that it belong to the class and can be accessed through the class itself
+  }
+}
+
+// Non static means its belong to the object of that particular class and would be accessible only through the object.
+
+class Calculator{
+  public static int count;
+
+  public static int add(int a, int b){                 
+    return a + b; 
+  }
+                                               // these two are static method these two method can be access without creating its object
+  public static int minus(int a, int b){        only through the calculator class.
+    return a - b;
+  }
+
+  public void printCount(){
+    System.out.println(count);               // this is not static method can only be accessible after creating the calculator object.
+  }
+
+}
+
+class WorkAtTech{
+
+  public static void main(String[] args){
+    System.out.println((Calulator.add(5,2)));
+    System.out.println((Calulator.minus(5,2)));
+   
+   Calculator calculator = new Calculator();
+   calculator.printCount();
+   // through object because this method was not static
+
+  }
+
+}

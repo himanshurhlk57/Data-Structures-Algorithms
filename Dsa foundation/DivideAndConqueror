@@ -1,5 +1,3 @@
-
-
 Divide and Conquer
 We looked at the decrease and conquer approach in the previous sections where we decreased the problem into a smaller subproblem. In decrease and conquer, the problem decreases to a single smaller subproblem. At each step, we conquer (solve) them recursively until the subproblem becomes small enough to become trivial to solve.
 
@@ -10,4 +8,3 @@ We apply these steps at each level of our divide and conquer solution:
 Divide: We divide the problem into multiple subproblems, that are similar but smaller in size.
 Conquer: We solve the subproblems recursively (recursive case). However, if they are small enough, we solve them in an ad-hoc manner (base case).
 Combine: We combine the results of our subproblems to create the solution for our original problem.
-

@@ -1,0 +1,32 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+  
+// we want to make this class generic so that we can reuse so store different types of object in the angle bracket T(type or Template)
+// T here reperesents types of object we want to store also paramters for class
+
+class GenericList<T> {
+	
+	private T[] items = (T[]) new Object[10];
+	private int count;
+	
+	public void add(T item){
+		items[count++] = item;
+	}
+	
+	public T get(int index){
+		return items[index];
+	}
+	
+}
+
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	int list = new GenericList<Integer>().add()
+     list.add(1);
+		int number = list.
+	}
+}

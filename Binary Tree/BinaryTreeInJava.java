@@ -65,7 +65,7 @@ import java.io.*;
 // 3:L5
 // 5:
                 
-    class BinaryTreeNode{
+  class BinaryTreeNode{
 	public int data;
 	public BinaryTreeNode left;
 	public BinaryTreeNode right;

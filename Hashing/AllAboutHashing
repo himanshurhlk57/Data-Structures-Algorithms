@@ -1,4 +1,4 @@
-Hashing is a technique or process of mapping keys, values, into the hash tabe 
+Hashing is a technique or process of mapping keys, values, into the hash table 
 by using a hash function. It is dine for faster access to elements
 .The efficiency of mapping depends on the efficiency of the hash function used.
 
@@ -12,9 +12,10 @@ Compresssion function will give you 92 % 20 -> 12. You will go to the index 12 a
 
 
 
-// Internal hashmap is implemented through hashtable
-// For hashmap we want insertion and retrieval of data very very fast and the data structure we already know where access or insertion is already faster is array. If we know the position we can directly go the position in O(1) time.
-// Key is passed through a hashfunction which gives you an integer
+ Internal hashmap is implemented through hashtable
+ For hashmap we want insertion and retrieval of data very very fast and the data structure we already know where access or insertion is already faster is array.
+ If we know the position we can directly go the position in O(1) time.
+ Key is passed through a hashfunction which gives you an integer
 
 Key -> [Hash Function] -> Integer
 Bucket Array -> [           ]

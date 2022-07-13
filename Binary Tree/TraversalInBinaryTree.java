@@ -16,8 +16,8 @@
 
 // iii-> Post-Order -> Left Right Root
 /*
-                  1
-			2          3
+          1
+			2       3
 		4      5   
 
 Pre-order -> [1,2,4,5,3]
@@ -32,7 +32,7 @@ Level-order -> [1,2,3,4,5]
 // /* This is the Node class definition
 
 // class Node {
-// 	public Node left;
+// 	   public Node left;
 //     public Node right;
 //     int data;
 

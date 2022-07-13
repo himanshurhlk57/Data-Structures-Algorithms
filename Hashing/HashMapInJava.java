@@ -24,9 +24,9 @@ class WorkAtTech{
 		System.out.println(value);
 		
 		
-		//To avoid null pointer exception in case we want to get the value of a particular i.e not present in the map
+		// To avoid null pointer exception in case we want to get the value of a particular i.e not present in the map
 		// we should do this way
-	    int value1 = 0;
+	  int value1 = 0;
 		if(map.containsKey("abc1")){
 			value1 = map.get("abc1");
 		}
