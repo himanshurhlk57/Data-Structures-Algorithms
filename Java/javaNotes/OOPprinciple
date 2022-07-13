@@ -1,0 +1,305 @@
+
+In OOP, objects and classes are the basic entities. Objects are created using classes. One can observe that classes contain data member,
+and method/function. Objects are created to manipulate and accesss this data.
+
+Data-hiding 
+
+Referes to concept of hiding the inner workings of a class and simply providing an interface through which the outside 
+world can interact with the class without knowing what's going on inside
+
+Data-hiding can be divided into two primary components
+
+1 -> // Abstraction
+
+The idea behind abstraction is to just hide the implementation from the user. Everything you want to show to the user 
+will be shown to the user but they won't be able to know the implementation detail of that.
+Abstraction is just hiding the implementation detail.
+
+
+2 -> // Encapsulation 
+
+The idea behing Encapsulation is to not only to hide the actual implementation but also to restrict the accesss of
+certain funcionalities and data through accesss specifier/modifier. 
+Keeping all the data and funcionality together but the purpose of doing that to restrict the accesss of certain things.
+Encapsulation is related to access of data members.
+
+Encapsulation referes to the concept of binding data and the methods operating on that data in a single unit 
+also called a class.
+The goal is to prevent this bound data from any unwanted access by the code outside the class.
+
+// Private and Public
+
+class Phone{
+  public String brand;
+  public String model;
+}
+
+class WorkAtTech{
+  public static void main(String[] args){
+    Phone phone = new Phone();
+    phone.brand = "Apple";                 // can access the brand attribute outside the phone class because it is public
+    System.out.println(phone.brand);
+  }
+}
+
+// in case Phone class attribute is private
+
+class Phone{
+  private String brand;         // we can't be able to access this attribute outside the Phone class
+  private String model; 
+
+  public void printBrand(){
+    System.out.println(brand);  // private attributes accessible inside the same class
+  }
+
+  // generally we make our class attribute as private.
+  // Always make our attribute private and provide a public getter to get the value and public setter method to set the value
+  // of that private attribute.
+
+  // getter and setter method for private attribute
+
+  public String getBrand(){
+    return brand;
+  }
+
+  public void setBrand(String brand){
+    this.brand = brand;
+  }
+
+}
+
+
+class WorkAtTech{
+  public static void main(String[] args){
+
+    Phone phone = new Phone();
+    phone.brand = "Apple";                 // can access the brand attribute outside the phone class 
+    System.out.println(phone.brand);
+
+   phone.setBrand("Apple");
+   System.out.println(phone.getBrand());
+
+  }
+}
+
+// private function
+
+class Phone{
+
+  public int getData(){
+    return 1 + getDataUsingSome();
+  }
+
+  private int getDataUsing(){
+    return 0;                     // private method only accessible inside this class not outside the class
+  }
+
+}
+
+
+3 -> // Inheritance  
+
+Provides a way to create a new class from an existing super class.
+The new class is a specialized version of the existing class such that it inherits all the 
+non-private fields(variable) and methods of the existing class.
+
+Whenever we come across on IS A relationship between objects, we can use Inheritance. 
+
+Square IS A Shape
+
+OOP languages allow us to reuse this and inherit attributes and function from one class to another. This property is known as Inheritance.
+
+class Phone{
+
+  private String brand;
+  private String model;
+
+  public Phone(String brand, String model){
+    this.brand = brand;
+    this.model = brand;
+  }
+
+}
+
+class CameraPhone extends Phone{
+
+}
+
+SuperClass(Mother class or Base class)
+This class allows the re-use of its non-primitive members in another class.
+
+SubClass(Child class or Derived class)
+A child class has all non-primitive characteristics of the mother class.
+
+final -> Some classes can't be inherited. Such classes are defined with the keyword final;
+
+this -> this keyword in Java used to refer to the instance of the current class.
+
+super -> super keyword in Java used to refer to the superclass members from inside the immediate subclass
+  
+  class Vehicle{             // Base/Parent class                        
+  int fuelCap = 90;
+ }
+
+  class Car extends Vehicle{   // subclass Car extending from vehicle
+  int fuelCap = 50;
+
+ }
+
+
+// Inheritance code
+
+
+class Phone {
+
+    private String brand;
+    private String model;
+    private int ram;
+    private int storage;
+    public Phone (String brand, String model, int ram, int storage) {
+        this.brand = brand;
+        this.model = model;
+        this.ram = ram;
+        this.storage = storage;
+    }
+
+    public String getBrand() {
+        return this.brand;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
+    public int getRam() {
+        return this.ram;
+    }
+
+    public int getStorage() {
+        return this.storage;
+    }
+
+    public void dialCall (String number) {
+        System.out.println("Calling " + number + " from " + brand + ":" + model);
+    }
+    
+    public void receiveCall (String number) {
+        System.out.println("Receiving call from " + number + " on " + brand + ":" + model);
+    }
+}
+
+class CameraPhone extends Phone {
+    private double resolution;
+
+    public CameraPhone(String brand, String model, int ram, int storage, double resolution) {
+        super(brand, model, ram, storage);    // calls the parameterized constructor of the superclass with matching paramters from the
+                                              // subclass constructor. The call to the superclass constructor using super() should always 
+                                              // be the first line of code inside the constructor of the subclass.
+        this.resolution = resolution;
+    }
+
+    public double getResolution() {
+        return this.resolution;
+    }
+    
+    public void clickPhoto () {
+        System.out.println("Clicking photo on a " + resolution + " MP " + getBrand() + ":" + getModel());
+    }
+}
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Vehicle{
+	private String brand;
+	
+	public Vehicle(String brand){
+		this.brand = brand;
+	}
+	public String getBrand(){
+		return this.brand;
+	}
+	public void honk(){
+		System.out.println(brand + " is honking");
+	}
+	
+}
+	class Car extends Vehicle{
+		private String model;
+		
+		public Car(String brand, String model){
+			super(brand);
+			this.model = model;
+		}
+		public String getModel(){
+			return this.model;
+		}
+		public void move(){
+			System.out.println(getBrand() +  " " + model + " is moving");
+		}
+	}
+
+
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Vehicle vehicle = new Vehicle("Tesla");
+		Car car = new Car("Tesla", "Model S");
+		System.out.println(vehicle.getBrand());
+		vehicle.honk();
+
+		System.out.println(car.getBrand() + " " + car.getModel());
+		car.honk();
+		car.move();
+	}
+}
+
+Extends relationship => class DerivedClass extends BaseClass
+All the "public" class members of the base class is available in the derived class and its objects.
+Examples:
+We can call getBrand() inside clickPhoto().
+We can call base class methods on the derived class object like this: cameraPhone.getBrand()
+Private class members of the base class are not available in the derived class.
+The constructor of the base class must be called first in the derived class constructor. We need to pass only the required parameters to the base class constructor. 
+
+ In single inheritance, we had one class inheriting from another class.
+ Similary, we have Hierarchical inheritance in which multiple classes inherit a single base class.
+
+ // Hierarchical inheritance
+ example ->
+
+ class ElectroniceDevice{
+
+ }
+ class Phone extends ElectronicDevice{
+
+ }
+ class Camera extends ElectronicDevice{
+
+ }
+
+// Multi-Level Inheritance
+Where the base class extends some other base class
+
+ class ElectronicDevice{
+
+ }
+class Phone extends ElectronicDevice{
+
+}
+class CameraPhone extends Phone{
+
+}
+
+// Protected Access modifiers
+
+When a class has a particular class member set as protected, the member is accessible to that particular class and any other class which inherits that base class.
+
+protected members are accessible to other classes in the same package as well.
+
+Here, in UML Diagram # represents protected.
+

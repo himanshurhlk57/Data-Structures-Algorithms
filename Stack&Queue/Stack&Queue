@@ -36,7 +36,7 @@ Since deque allows pushing and popping from both ends, they can be used independ
 
 
 
-ava has an interface named Deque which is used to create a Double-ended queue. The Deque interface extends the Queue interface.
+Java has an interface named Deque which is used to create a Double-ended queue. The Deque interface extends the Queue interface.
 
 Most used implementations of Deque interface:
 

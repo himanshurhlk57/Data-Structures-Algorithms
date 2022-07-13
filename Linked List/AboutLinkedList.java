@@ -38,7 +38,7 @@ import java.io.*;
 // 	// lastly return the head node
 
 // 	public static Node createLinkedList(){
-// 		    Node n1 = new Node(10);
+// 		  Node n1 = new Node(10);
 // 			Node n2 = new Node(20);
 // 			Node n3 = new Node(30);
 // 			Node n4 = new Node(40);

@@ -2,10 +2,14 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-// Function Overloading
+Polymorphism means having many forms(Poly: Many, Morph: form)
+Polymorphism refers to the same object exhibiting different forms and behaviors
+
+
+// Function Overloading 
 
 // Function overloading is the ability to create multiple functions with the same name but different implementations.
-
+// This type of polymorphism is known as compile time polymorphism
 // What basically happens here is that when the code is getting compiled, the compiler tries to select the correct method 
 // for each of function calls based on the arguments being passed (number of arguments and data types of those arguments).
 
@@ -65,4 +69,5 @@ class WorkAtTech
 // float divide (int numerator, int denominator) {
 // 	return numerator/((float) denominator);
 // }
-// Here, even though the implementation and return type is different, the number of parameters and the data types are still the same. That's why it is not valid. Function Overloading allows us to create functions with the same name with different parameters only.
+// Here, even though the implementation and return type is different, the number of parameters and the data types are still the same. 
+// That's why it is not valid. Function Overloading allows us to create functions with the same name with different parameters only.

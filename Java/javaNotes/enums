@@ -1,0 +1,37 @@
+For a class of month
+object can be or exist from january to december
+Can there be 13th month or 13th object
+we use enums for this
+
+all the enum expliticly extends java.lang.enum class 
+enum can implements as many interfaces you want but it can't support multiple inheritance extending more than one class
+
+public class Enum{
+  enum week {
+    Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+    // these are enum constants
+    // every single one here is public static final member
+    // since it is final you can't create child enums
+    // type of all of these is week
+
+    Week() {
+      System.out.println("Constructor called for " + this);
+    }
+
+    // this is not public or protected, only private or default
+    // we dont want to create new objects because this is not enum concept this 
+    // is fixed group of object so we use enums lets say for month 12 or for week 7
+  }
+ 
+ public static void main(String[] args){
+  Week week;
+  week = Week.Monday;
+   System.out.println(week); // Monday
+
+  for(Week day: Week.values()){
+    System.out.println(day);
+  }
+ }
+  
+
+}

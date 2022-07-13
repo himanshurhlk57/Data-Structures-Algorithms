@@ -7,6 +7,11 @@ import java.io.*;
 
 // Interfaces are pretty commonly used to achieve abstraction.
 
+// variable are static and final by default becuase static variable are not dependent on object as we can't create object of interface
+
+// if you create a variable inside an interface and you can't have contructor inside interface then how will you initialize it 
+// as we know final variable need to be initialized
+
 interface Animal {
     void move();
     void speak();
@@ -39,7 +44,9 @@ class Dog implements Animal {
 // An interface can extend multiple interfaces. A class can implement multiple interfaces. 
 // This allows doing multiple inheritance in Java which is not possible with base classes
 
-
+// but an abstract class can only extends one java class or one interface 
+// where class and interface canimplements more than one interface at a time 
+// a class can implement more than one interface but a class can only inherit one abstract class or super class  
 
 
 
@@ -50,7 +57,6 @@ class Dog implements Animal {
 // Multiple inheritance is not supported due to ambiguity
 // if parent and partner1 both contain the same function then the child class son will get confused which function to pick up
 
-//  
 
 // This is not supported in java for this we have to learn interfaces
 
@@ -85,8 +91,12 @@ class Dog implements Animal {
 	void stop();
 }
 
+// both the Engine and Media interface has two same abstract method.
+// i.e abstract start and stop method
 
-// ABstract methods start, stop so implement all the method
+// now if i want to create a car and have brake and engine functionality previously 
+// i wasn't able to do this now using interface we can achieve this.
+// Abstract methods start, stop so implement all the method
 class Car implements Engine, Brake{
 	void brake(){
 		System.out.println("I brake like a normal car");

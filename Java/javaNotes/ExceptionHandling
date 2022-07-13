@@ -1,0 +1,49 @@
+public class Main{
+
+  ArithmetaicException -> Exception
+
+   static int divide(int a, int b) throws ArithmetaicException{
+    if(b == 0){
+      throw new ArithmetaicException("Please do not divide by zero");
+    }
+    return a / b;
+   }
+
+  public static void main(String[] args){
+    int a = 5;
+    int b = 0;
+    try{
+      divide(a, b);   // divide by zero exception or Arithmetaic exception
+
+      // our own exception
+      String name = "Himanshu";
+      if(name.equals("Himanshu")){
+        throw new MyException("Name is Himanshu")
+      }
+    }catch(MyException e){
+      System.out.println(e.getMessage());
+    }
+    catch(ArithmetaicException e){
+      System.out.println(e.getMessage());  // / by zero
+    }catch(Exception e){
+      System.out.println("Normal Exception"); 
+    }
+    finally{
+      System.out.println("this will always execute") // no matter what whether exception is thorwn or not this block will always be executed
+    }
+  }
+
+
+
+}
+
+// our own exception
+
+public class MyException extends Exception{
+ 
+  public MyException(String message){
+    super(message);
+
+  }
+
+}
